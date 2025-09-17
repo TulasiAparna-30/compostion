@@ -1,58 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Instagram Profile Clone</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mini Byju's App Prototype</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background: #f5f9ff;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  header {
+    background: #0071bc;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+  }
+  main {
+    flex-grow: 1;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+  }
+  #lessonList {
+    width: 25%;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+    padding: 15px;
+    overflow-y: auto;
+  }
+  #lessonList h2 {
+    margin-top: 0;
+  }
+  #lessonList ul {
+    list-style: none;
+    padding: 0;
+  }
+  #lessonList li {
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 8px;
+    border: 1px solid transparent;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  #lessonList li:hover, #lessonList li.active {
+    background: #d6eaff;
+    border-color: #0071bc;
+  }
+
+  #content {
+    flex-grow: 1;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  h2 {
+    margin-top: 0;
+  }
+
+  #videoPlayer {
+    width: 100%;
+    max-height: 300px;
+    border-radius: 8px;
+    background: black;
+  }
+
+  #quiz {
+    margin-top: 20px;
+  }
+
+  .question {
+    margin-bottom: 15px;
+  }
+
+  .answers label {
+    display: block;
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+
+  button {
+    background: #0071bc;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    align-self: flex-start;
+  }
+  button:hover {
+    background: #005f9e;
+  }
+
+  #progress {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #0071bc;
+  }
+</style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <h1>Instagram</h1>
-    <nav>
-      <a href="#">Home</a> |
-      <a href="#">Search</a> |
-      <a href="#">Profile</a>
-    </nav>
-  </header>
+<header>
+  <h1>Mini Byju's App</h1>
+</header>
 
-  <hr>
-
-  <!-- Profile Section -->
-  <section>
-    <img src="https://via.placeholder.com/100" alt="Profile Picture" />
-    <h2>@johndoe</h2>
-    <p>Web Developer | Traveler | Photographer</p>
-    <p>100 Posts | 500 Followers | 300 Following</p>
+<main>
+  <section id="lessonList">
+    <h2>Lessons</h2>
+    <ul id="lessonsUl">
+      <!-- lessons will be loaded here -->
+    </ul>
   </section>
 
-  <hr>
+  <section id="content">
+    <h2 id="lessonTitle">Select a lesson to start learning</h2>
 
-  <!-- Posts Grid -->
-  <section>
-    <h3>Posts</h3>
-
-    <table>
-      <tr>
-        <td><img src="https://via.placeholder.com/150" alt="Post 1"></td>
-        <td><img src="https://via.placeholder.com/150" alt="Post 2"></td>
-        <td><img src="https://via.placeholder.com/150" alt="Post 3"></td>
-      </tr>
-      <tr>
-        <td><img src="https://via.placeholder.com/150" alt="Post 4"></td>
-        <td><img src="https://via.placeholder.com/150" alt="Post 5"></td>
-        <td><img src="https://via.placeholder.com/150" alt="Post 6"></td>
-      </tr>
-    </table>
-  </section>
-
-  <hr>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Instagram Clone by You</p>
-  </footer>
-
-</body>
-</html>
+    <video id="videoPlayer" controls style="display:none;">
+      <source id="videoSource" src=
